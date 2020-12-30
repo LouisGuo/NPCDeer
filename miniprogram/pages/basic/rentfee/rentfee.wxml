@@ -1,0 +1,49 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">房租均摊</view>
+</cu-custom>
+<view class="cu-rentfee">
+  <view class="{{showEditor?'showEditor':'noShowEditor'}}">
+    <van-panel title="均摊明细" desc="" status="" use-footer-slot>
+      <view class="panel-action">
+        <van-button size="small" type="danger" bindtap="resetFeeList">重置</van-button>
+        <van-button size="small" type="primary" bindtap="addFeeItem">新增</van-button>
+      </view>
+      <view slot="footer">
+        <van-uploader file-list="{{fileList}}" bind:after-read="afterRead" bind:delete="deleteImg" />
+        <van-cell-group>
+          <view wx:for="{{feeList}}" class="fee-item">
+            <van-dropdown-menu data-index="{{index}}">
+              <van-dropdown-item data-index="{{index}}" value="{{item.feeType}}" options="{{feeTypeOption}}"
+                disabled="{{item.isFixed}}" bind:change="feeTypeChange" />
+            </van-dropdown-menu>
+            <van-field data-index="{{index}}" value="{{ item.feeValue }}" placeholder="请输入费用" border="{{ true }}"
+              type="digit" bind:change="feeValueChange" />
+            <van-switch data-index="{{index}}" checked="{{ item.needPay }}" bind:change="needPayChange" />
+          </view>
+        </van-cell-group>
+      </view>
+    </van-panel>
+
+    <view class="cal-panel">
+      <van-button type="primary" size="normal" open-type="share" bindtap="shareRentFee">分享</van-button>
+    </view>
+
+
+  </view>
+  <view>
+    <van-panel title="房租均摊" desc="" status="总计: ￥{{totalFee}}" use-footer-slot>
+      <view class="panel-detail">{{totalFeeStr}}</view>
+      <view slot="footer">
+        <van-swipe-cell wx:for="{{feeResult}}" right-width="{{ 65 }}" left-width="{{ 0 }}">
+          <van-cell-group>
+            <van-card num="" price="{{item.totalFee}}" desc="{{item.formula}}" title="{{item.nickName}}"
+              thumb="{{item.thumb}}" />
+          </van-cell-group>
+          <view slot="right" class="van-swipe-cell__left">编辑</view>
+        </van-swipe-cell>
+      </view>
+    </van-panel>
+  </view>
+
+</view>

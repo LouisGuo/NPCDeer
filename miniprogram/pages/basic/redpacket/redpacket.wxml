@@ -1,0 +1,33 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">房租均摊</view>
+</cu-custom>
+<view class="cu-redpacket">
+
+  <view wx:for="{{coupons}}" wx:key="item">
+    <view class="cu-item margin-top" data-appid="{{item.app_id}}" data-path="{{item.app_path}}" bindtap="jumpClick">
+      <view class="cu-bar bg-white solid-bottom">
+        <view class="action">
+          <text class="cuIcon-title text-{{item.color}}"></text>{{item.title}}
+        </view>
+        <view class='action'>
+          <button class="cu-btn sm round bg-{{item.color}}">立即打开</button>
+          <!-- <button class="cuIcon-share lg text-{{item.color}} share"  open-type="share"></button> -->
+        </view>
+      </view>
+      <view class="image">
+        <image src="{{item.image}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class="cu-list grid col-{{mini_lists.length}} mt">
+    <view class="cu-item" wx:for="{{mini_lists}}" wx:key>
+      <view class="cuIcon-{{item.icon}} text-{{item.color}}" bindtap="jump_mini" data-appid="{{item.app_id}}"
+        data-path="{{item.app_path}}">
+        <image src="{{item.image}}" mode="widthFix" class="item_img"></image>
+      </view>
+      <text>{{item.remark}}</text>
+    </view>
+  </view>
+
+</view>

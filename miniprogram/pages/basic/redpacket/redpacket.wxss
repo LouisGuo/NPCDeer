@@ -1,0 +1,11 @@
+/* pages/basic/redpacket/redpacket.wxss */
+.cu-redpacket{
+	display: block;
+	background-color: var(--white);
+	margin-top: 160rpx;
+}
+ 
+
+.image{
+  margin: 0rpx 50rpx;
+}

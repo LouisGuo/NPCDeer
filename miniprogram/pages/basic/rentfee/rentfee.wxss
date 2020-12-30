@@ -1,0 +1,56 @@
+/* pages/index/index.wxss */
+.cu-rentfee{
+	display: block;
+	background-color: var(--white);
+	margin-top: 160rpx;
+}
+.fee-item{
+  display: flex;
+}
+
+.panel-action{
+  text-align: right;
+}
+
+.cal-panel{
+  text-align: center;
+}
+
+.panel-detail{
+  font-size: 30rpx;
+  color: #646566;
+  margin-left: 40rpx;
+  height: 50rpx;
+}
+
+.showEditor{
+  display: block;
+}
+
+.noShowEditor{
+  display: none;
+}
+
+
+.van-swipe-cell__left{
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color:rgb(84, 221, 84);
+}
+
+.van-swipe-cell__right {
+  /* display: inline-block;
+  width: 65px;
+  height: 100%;
+  font-size: 15px;
+  line-height: 100%; */
+  color: #fff;
+  text-align: center;
+  margin: auto auto;
+  /* background-color: #f44; */
+}
