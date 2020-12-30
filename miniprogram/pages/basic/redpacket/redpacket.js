@@ -8,9 +8,9 @@ Page({
 
     coupons: [ 
       { 
-        title: '饿了么外卖天天大红包', 
+        title: '饿了么红包最高66元天天拿', 
         app_id:'wxece3a9a4c82f58c9', 
-        app_path:'pages/sharePid/web/index?scene=s.click.ele.me/z1UV6wu', 
+        app_path:'taoke/pages/shopping-guide/index?scene=FQSqksu', 
         color:"green", 
         image:"http://toolfk.xiuxiandou.com/yhq/coupe2/elm_hb.png", 
       },
